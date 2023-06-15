@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "pysarch"
+version = "0.1.0"
+description = "A static software architecture analyzer for Python."
+authors = ["Joseph Corrado <josephcorrado7@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "*"
+black = "*"
+flake8 = "*"
+pre-commit = "*"
+pytest = "*"
+pytest-cov = "*"
+interrogate = "*"
+isort = "*"
+commitizen = "*"
+ipykernel = "*"
+jupyter = "*"
+pandas-stubs = "*"
+flake8-bugbear = "*"
+sourcery = "*"
+
+[tool.isort]
+profile = "black"
+import_heading_stdlib = "Python Standard Library Imports"
+import_heading_thirdparty = "Third Party Imports"
+import_heading_firstparty = "Pysarch Imports"
+# src_paths = ["<path-to-src-code>"]
+known_first_party = ["pysarch"]
+# known_third_party = ["<any 3rd party packages with potential name collisions>"]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    # transform all other warnings into errors
+    "error",
+    # ignore UserWarnings
+    "ignore::UserWarning",
+    # note the use of single quote below to denote "raw" strings in TOML
+    'ignore:function ham\(\) is deprecated:DeprecationWarning',
+    "ignore::DeprecationWarning",
+]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
