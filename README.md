@@ -8,3 +8,4 @@ The purpose of this package is to wrap into a single package the learnings from 
 * Code that Fits in Your Head
 * Refactoring
 * Unit Testing
+* Continuous Integration
