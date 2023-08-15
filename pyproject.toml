@@ -4,9 +4,13 @@ version = "0.1.0"
 description = "A static software architecture analyzer for Python."
 authors = ["Joseph Corrado <josephcorrado7@gmail.com>"]
 readme = "README.md"
+packages = [
+    {include = "pysarch"}
+]
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
+gitpython = "^3.1.32"
 
 
 [tool.poetry.group.dev.dependencies]
